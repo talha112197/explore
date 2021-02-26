@@ -1,0 +1,1288 @@
+/*=========================================
+               RESET CSS 
+=========================================*/
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*=========================================
+               CUSTOM PROPERTIES 
+=========================================*/
+:root {
+    font-size: 62.5%;
+
+    --color-white: #fff;
+    --color-light-pink: #fb527a;
+    --color-paleViolet: palevioletred;
+    --color-grey: #888;
+    --color-grey-m: #8f8f8f;
+    --color-silver: silver;
+}
+
+/*=========================================
+               BODY 
+=========================================*/
+body {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.6rem;
+}
+
+/*=========================================
+               NAVBAR CSS 
+=========================================*/
+nav#navbar {
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    max-height: 7rem;
+    padding-top: 1.7rem;
+    padding-bottom: 0.8rem;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+nav#navbar a.navbar-brand {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-grey-m);
+}
+
+nav#navbar button.navbar-toggler {
+    position: relative;
+    z-index: 1000;
+    color: var(--color-grey);
+    border: 0.1rem solid var(--color-silver);
+    padding: 1rem;
+}
+
+nav#navbar button.navbar-toggler i{
+    font-size: 2rem;
+    
+}
+
+nav#navbar ul li {
+    padding: 1rem 0;
+    margin-right: 1rem;
+}
+
+nav#navbar ul li a {
+    font-size: 1.4rem;
+    color: var(--color-grey);
+}
+
+nav#navbar.fixed {
+    position: fixed;
+    background-color: var(--color-white);
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    border-bottom: 0.1rem solid var(--color-silver);
+    z-index: 10000;
+}
+
+/*=========================================
+               SHOWCASE SECTION CSS
+=========================================*/
+section#showcase {
+    background: url('../images/slider9.jpg') center no-repeat fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+section#showcase div.showcase-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    padding-left: 11rem;
+    max-width: 70rem;
+
+}
+
+section#showcase div.showcase-content h1 {
+    font-size: 5.6rem;
+}
+
+section#showcase div.showcase-content h1,
+section#showcase div.showcase-content a {
+    font-weight: 600;
+}
+
+section#showcase div.showcase-content p {
+    font-size: 1.7rem;
+    line-height: 4rem;
+    margin: 3rem 0;
+}
+
+section#showcase div.showcase-content a {
+    padding: 1.8rem 4rem;
+    font-size: 1.4rem;
+    background-color: var(--color-light-pink);
+    color: var(--color-white);
+    border: 0.1rem solid var(--color-silver);
+    margin-right: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+section#showcase div.showcase-content a:link::before,
+section#showcase div.showcase-content a:visited::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-paleViolet);
+    z-index: -1;
+    transform: scaleY(0);
+    transform-origin: top bottom;
+    transition: all 0.5s ease-in-out;
+}
+
+section#showcase div.showcase-content a:hover::before,
+section#showcase div.showcase-content a:active::before {
+    transform: scaleY(1);
+}
+
+.p-8 {
+    padding: 8rem;
+}
+
+.p-12 {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+}
+
+/*=========================================
+               SERVICES SECTION
+=========================================*/
+section#services h2.services-heading,
+section#video h2.video-heading,
+section#features h2.features-heading {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 0.3rem;
+    margin-bottom: 8rem;
+}
+
+section#services div.services-col {
+    margin-bottom: 3rem;
+}
+
+section#services div.card {
+    padding: 2rem;
+    border-radius: 1rem;
+    min-height: 35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+section#services div.card:hover {
+    border: 0.2rem solid var(--color-light-pink);
+
+}
+
+section#services div.card img {
+    height: 6rem;
+    width: 6rem;
+    margin: 0 auto;
+}
+
+section#services div.card h3 {
+    font-weight: 700;
+}
+
+section#services div.card p {
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+/*=========================================
+               VIDEO SECTION
+=========================================*/
+section#video h2.video-heading {
+    margin-bottom: 1rem;
+}
+
+section#video h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.2rem;
+    margin-bottom: 5rem;
+}
+
+section#video div.video-wrapper {
+    width: 100%;
+    height: 70vh;
+    position: relative;
+}
+
+section#video div.video-wrapper div.videoThumbnail,
+section#video div.video-wrapper div.playVideo {
+    position: absolute;
+}
+
+section#video div.video-wrapper div.videoThumbnail {
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+section#video div.video-wrapper div.videoThumbnail,
+section#video div.video-wrapper div.videoThumbnail img,
+section#video div.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section#video div.video-wrapper div.videoThumbnail img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+section#video div.video-wrapper div.playVideo {
+    position: absolute;
+    top: 35%;
+    left: 45%;
+    z-index: 2;
+}
+
+section#video div.video-wrapper div.playVideo a i {
+    font-size: 2vw + 2vh;
+    color: var(--color-white);
+    background-color: var(--color-light-pink);
+    border-radius: 50%;
+    padding: 2rem;
+    margin: 0 auto;
+    border: 1rem solid var(--color-paleViolet);
+}
+
+section#video div.video-wrapper div.playVideo a i:hover {
+    border: 1rem solid var(--color-silver);
+    background-color: var(--color-grey);
+    transition: all 1s ease;
+}
+
+section#video div.video-wrapper video {
+
+    position: relative;
+    border-radius: 1rem;
+    filter: brightness(50%);
+}
+
+/*=========================================
+               ABOUT SECTION
+=========================================*/
+section#about {
+    background: #f4f4f4;
+}
+
+section#about div.card {
+    padding: 8rem 3rem;
+}
+
+section#about div.card:hover {
+    background-color: var(--color-light-pink);
+    transition: all 0.5s ease-in-out;
+}
+
+section#about div.card:hover h3,
+section#about div.card:hover i,
+section#about div.card:hover p {
+    color: var(--color-white);
+}
+
+section#about div.card:hover h3::after {
+    background-color: var(--color-white);
+}
+
+section#about div.card i{
+     font-size: 4.2rem;
+     margin-bottom: 2rem;
+ }
+
+section#about div.card h3 {
+     font-size: 2.4rem;
+     margin-bottom: 1rem;
+     position: relative;
+ }
+
+section#about div.card h3::after {
+    content: "";
+    position: absolute;
+    bottom: -2rem;
+    left: 40%;
+    height: 0.3rem;
+    width: 20%;
+    background-color: var(--color-light-pink);
+    border-radius: 1rem;
+}
+
+section#about div.card p {
+    margin-top: 3rem;
+    font-size: 1.6rem;
+    font-weight: 100;
+}
+
+/*=========================================
+               TEAM SECTION CSS
+=========================================*/
+section#team div.team-content-col h2 {
+    font-size: 2.5rem;
+    letter-spacing: 0.2rem;
+    margin-bottom: 2rem;
+}
+
+section#team div.team-content-col h2 span {
+    font-weight: bold;
+}
+
+section#team div.team-content-col p {
+    font-weight: 100;
+    margin-bottom: 2rem;
+}
+
+section#team div.team-content-col div.team-social a, div.social a{
+    background-color: var(--color-light-pink);
+    color: var(--color-white);
+}
+
+section#team div.team-content-col div.team-social a i {
+    font-size: 2rem;
+    padding: 0.7rem;
+}
+
+section#team div.team-member {
+    margin-right: 1rem;
+    position: relative;
+}
+
+section#team div.team-member:hover img {
+    filter: brightness(50%);
+    transition: all 0.5s ease;
+}
+
+section#team div.team-member-info {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: scaleX(0);
+    transform-origin: left right;
+    transition: all 0.5s ease-in-out;
+}
+
+section#team div.team-member:hover div.team-member-info {
+    transform: scaleX(1);
+}
+
+section#team div.team-member-info h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+section#team div.team-member-info h3 {
+   font-size: 1.5rem;
+   font-weight: 300;
+   letter-spacing: 0.8rem;
+   margin-bottom: 2rem;
+}
+
+section#team div.social a i {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+
+section#team ul.slick-dots li{
+    color: var(--color-silver);
+}
+
+section#team div.progress-row {
+    margin-top: 6rem;
+}
+
+section#team div.progress-col h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.4rem;
+    margin-bottom: 2rem;
+}
+
+section#team div.progress-col div.progress {
+    height: 3rem;
+    margin-bottom: 2rem;
+}
+
+section#team div.progress-col div.progress-bar {
+    background-color: var(--color-light-pink);
+    position: relative;    
+}
+
+/*=========================================
+               TESTIMONIALS SECTION 
+=========================================*/
+section#testimonials {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/43.jpeg') center no-repeat fixed;
+    background-size: cover;
+    height: 70vh;
+    width: 100%;
+}
+
+section#testimonials div.testimonials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 100%;
+}
+
+section#testimonials div.testimonials i {
+    font-size: 5rem;
+    margin-bottom: 4rem;
+}
+
+section#testimonials div.testimonials p {
+    font-weight: 100;
+    font-style: italic;
+}
+
+section#testimonials div.testimonials h4 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: 0.3rem;
+}
+
+section#testimonials div.testimonials h5 {
+    color: var(--color-light-pink);
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+}
+
+section#testimonials ul.slick-dots {
+    bottom: 1rem;
+}
+
+section#testimonials ul.slick-dots li button {
+     background-color: var(--color-light-pink);
+     border-radius: 50%;
+}
+
+/*=========================================
+               FEATURES HHEADING 
+=========================================*/
+section#features div.features-col h2 {
+    margin-bottom: 1rem;
+}
+
+section#features div.features-col p {
+    font-weight: 100;
+    margin-bottom: 5rem;
+}
+
+section#features div.why-reasons i {
+    text-align: center;
+    
+    padding: 1rem;
+    box-shadow: 0rem 0rem 0rem 0.5rem #eff2f7;
+    margin-right: 2.5rem;
+    font-size: 2rem;
+    border-radius: 50%;
+}
+
+section#features div.why-reasons i:hover {
+    background-color: var(--color-light-pink);
+    color: var(--color-white);
+}
+
+section#features div.why-reasons h3 {
+    font-weight: 600;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+section#features div.why-reasons p {
+    color: #616161;
+    font-weight: 200;
+}
+
+section#features div.why-reasons div.reason:hover p.reason-icon i {
+    animation: rotate 1s infinite linear;
+}
+
+div.img-col {
+    position: relative;
+}
+
+div.img-col img.img-2 {
+    position: absolute;
+    left: 0;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+section#features div.why-reasons div.reason {
+    margin-bottom: 4rem;
+}
+
+section#features div.reason:hover {
+    transform: scale(1.02);
+    transition: all 0.5s ease;
+}
+
+section#features div.why-reasons div.reason-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*=========================================
+               TABS
+=========================================*/
+section#tabs {
+    background: #f4f4f4;
+}
+
+section#tabs div.nav.nav-tabs {
+    border-bottom: none;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;   
+}
+
+section#tabs div.nav.nav-tabs button {
+    flex-basis: 13rem;
+    margin-bottom: 2rem;
+}
+
+section#tabs button.nav-link {
+    background: transparent;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0;
+    border: none;
+
+}
+
+section#tabs button.nav-link:hover,
+section#tabs button.nav-link:focus,
+section#tabs button.nav-link:focus-visible {
+    outline: none;
+    border: none;
+    box-shadow: none;
+    border-color: transparent;
+}
+
+section#tabs button.nav-link.active,
+section#tabs button.nav-link:hover {
+    background: none;
+    border: none;
+    color: var(--color-light-pink);
+    font-weight: 700;
+    border-bottom: 0.3rem solid var(--color-light-pink);
+    padding-bottom: 0.5rem;
+    -webkit-transition: border-color 300ms linear;
+    transition: border-color 300ms linear;
+}
+
+section#tabs div.card-body {
+    padding: 5.9rem 3rem;
+}
+
+section#tabs div.card-body h4 {
+    font-size: 4.8rem;
+    color: #bbb;
+    margin-bottom: 2rem;
+    font-weight: 100;
+}
+
+section#tabs div.card-body h3 {
+    font-size: 2.5rem;
+}
+
+section#tabs div.card-body p {
+    line-height: 2;
+    font-size: 1.3rem;
+}
+
+section#tabs div.card-body a {
+    border-radius: 2.8rem;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    background-color: var(--color-light-pink);
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    color: var(--color-white);
+    padding: 1.2rem 4.6rem;
+}
+
+section#tabs div.tab-col,
+section#tabs div.tab-col img {
+    min-height: 42.5rem;
+}
+
+/*=========================================
+              Gallery
+=========================================*/
+section#gallery div.button-group button{
+    font-size: 1.6rem;
+    padding: 1rem 3rem;
+    margin-bottom: 2rem;
+}
+
+section#gallery div.filterCol {
+    position: relative;
+}
+
+section#gallery div.filterCol img {
+    width: 100%;
+    object-fit: cover;
+}
+
+div.project-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    border: 0.4rem solid var(--color-light-pink);
+    top: 0;
+    left: 0;
+    padding: 3rem;
+    transform: scaleX(0);
+    transform-origin: left right;
+    transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+}
+
+section#gallery div.filterCol:hover  div.project-content {
+    transform: scaleX(1);
+}
+
+section#gallery div.project-content h3 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+section#gallery div.project-content p {
+    font-size: 1.3rem;
+    letter-spacing: 0.3rem;
+     color: #1a2373;
+}
+
+section#gallery div.project-content div.project-link {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 80%;
+}
+
+section#gallery div.project-content div.project-link a i {
+line-height:4rem;
+border-radius: 50%;
+border: 0.1rem solid #1a2373;
+text-align: center;
+font-size: 2rem;
+color: #1a2373;
+width: 4rem;
+height: 4rem;
+}
+
+section#gallery div.project-content div.project-link a i:hover {
+    border: 0.1rem solid var(--color-light-pink);
+    color: var(--color-light-pink);
+    transition: all 0.5s ease-in-out;
+}
+
+/*=========================================
+              TESTIMONIALS
+=========================================*/
+section#testimonials-2 {
+    background: linear-gradient(to left, #fb527a, #ffc371, #fb527a);
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
+}
+
+section#testimonials-2 img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    border: 0.5rem solid var(--color-light-pink);
+    box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.15);
+    margin: 0 auto;
+    margin-bottom: 4rem;
+}
+
+section#testimonials-2 div.test-2 {
+    background-color: var(--color-white);
+    padding: 2rem;
+}
+
+section#testimonials-2 div.test-2 h4 {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+section#testimonials-2 div.test-2 h4::after {
+    content: "";
+    position: absolute;
+    bottom: -1rem;
+    left: 47%;
+    background-color: rgb(29, 29, 29);
+    width: 5%;
+    height: 0.1rem;
+}
+
+fieldset,
+label {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin: 10px;
+}
+
+/****** Style Star Rating Widget *****/
+
+.rating {
+    border: none;
+    float: left;
+}
+
+.rating>input {
+    display: none;
+}
+
+.rating>label:before {
+    margin: 5px;
+    font-size: 1.25em;
+    font-family: "Font Awesome 5 Free";
+    display: inline-block;
+    content: "\f005";
+}
+
+.rating>.half:before {
+    content: "\f089";
+    position: absolute;
+}
+
+.rating>label {
+    color: #ddd;
+    float: right;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating>input:checked~label,
+/* show gold star when clicked */
+.rating:not(:checked)>label:hover,
+/* hover current star */
+.rating:not(:checked)>label:hover~label {
+    color: #FFD700;
+}
+
+/* hover previous stars in list */
+
+.rating>input:checked+label:hover,
+/* hover current star when changing rating */
+.rating>input:checked~label:hover,
+.rating>label:hover~input:checked~label,
+/* lighten current selection */
+.rating>input:checked~label:hover~label, input.five-stars:checked {
+    color: #FFED85;
+}
+
+/*=========================================
+               PRICING
+=========================================*/
+section#pricing div.pricing-col div.card {
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+section#pricing div.pricing-col h3 {
+    font-weight: bold;
+    margin-bottom: 3rem;
+}
+
+section#pricing div.pricing-col h4 {
+    margin-bottom: 3rem;
+}
+
+section#pricing div.pricing-col h4 span {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 0.2rem;
+}
+
+section#pricing div.pricing-col ul li {
+    line-height: 2;
+    font-weight: 100;
+}
+
+section#pricing div.pricing-col div.card {
+    min-height: 50rem;
+}
+
+section#pricing div.pricing-col div.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+section#pricing div.pricing-col a,
+section#contact-content form button {
+    background: var(--color-light-pink);
+    border-color: var(--color-light-pink);
+    color: #fff;
+    padding: 1.2rem 3.5rem;
+    border-radius: 3rem;
+    border: 0.1rem solid transparent;
+    position: relative;
+    z-index: 3;
+    -webkit-box-shadow: 0rem 1rem 3rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0rem 1rem 3rem rgba(0, 0, 0, 0.1);
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    font-size: 1.4rem;
+}
+
+section#pricing div.pricing-col div.card:hover {
+   transition: all 0.5s ease-in-out;
+}
+
+section#pricing div.pricing-col:nth-child(3) div.card, 
+section#pricing div.pricing-col div.card:hover {
+    background-color: var(--color-light-pink);
+    color: var(--color-white);
+}
+
+section#pricing div.pricing-col:nth-child(3) div.card a,
+section#pricing div.pricing-col div.card:hover a , 
+section#pricing div.pricing-col:nth-child(3) div.card:hover {
+    background-color: var(--color-white);
+    color: var(--color-light-pink);
+}
+
+
+/*======================================
+            Counter section css
+=========================================*/
+section#stats {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/new.jpeg') center fixed no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+section#stats div.stats-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100vh;
+    color: var(--color-white);
+    text-align: center;
+}
+
+section#stats div.stats-content div.counter {
+    flex-basis: 20rem;
+}
+
+section#stats div.stats-content i {
+    font-size: 8.5rem;
+}
+
+section#stats div.stats-content h2 {
+    font-weight: bolder;
+    font-size: 4.2rem;
+    color: var(--color-light-pink);
+}
+
+section#stats div.stats-content p {
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+}
+
+/*=========================================
+               CLIENTS
+=========================================*/
+section#clients h2 {
+    font-size: 3rem;
+    margin-bottom: 5rem;
+}
+
+/*======================================
+            BLOGS CSS 
+=========================================*/
+section#blog {
+    background-color: #f4f4f4;
+}
+
+section#blog h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-weight: 900;
+}
+
+section#blog p {
+    margin-bottom: 4rem;
+    letter-spacing: 0.3rem;
+    font-weight: 200;
+}
+
+section#blog div.card {
+    margin-right: 1rem;
+}
+
+section#blog div.card-body {
+    padding: 0;
+}
+
+section#blog div.card-img-top {
+    position: relative;
+}
+
+section#blog div.card-img-top img {
+    max-height: 23rem;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    object-fit: cover;
+}
+
+section#blog div.card-img-top div.post-date {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-light-pink);
+    padding: 1rem;
+    color: var(--color-white);
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+section#blog div.post-sharing {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-light-pink);
+    padding: 1.5rem;
+}
+
+section#blog i {
+    font-size: 2rem;
+    color: var(--color-white);
+}
+
+section#blog i:hover {
+    animation: animate 1s linear infinite;
+    transition: all 0.5s ease-in-out;
+}
+
+@keyframes animate {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+section#blog div.blog-post-content {
+    padding: 1.5rem;
+    font-size: 1.4rem;
+    line-height: 2;
+    text-align: justify;
+}
+
+section#blog div.blog-post-content a:link,
+section#blog div.blog-post-content a:visited {
+    background-color: var(--color-light-pink);
+    color: var(--color-white);
+    padding: 1rem;
+    font-size: 1.6rem;
+    margin: 2rem 0 1rem 0;
+}
+
+section#blog div.blog-post-content a:hover {
+    background-color: transparent;
+    color: #000;
+    border: 0.1rem solid #000;
+    transition: all 0.5s ease-in-out;
+}
+
+/*=========================================
+               CONTACT
+=========================================*/
+section#contact {
+    background: url('../images/contact.jpg') center center no-repeat fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/*=========================================
+              CONTACT CONTENT
+=========================================*/
+section#contact-content {
+    position: relative;
+}
+
+section#contact-content div.contact-content-col,
+section#contact-content div.contact-info-col {
+    position: relative;
+    z-index: 100;
+    top: -5rem;
+    background-color: var(--color-white);
+}
+
+section#contact-content div.contact-info-col {
+    background-color: var(--color-light-pink);
+    color: var(--color-white);
+}
+
+section#contact-content form input,
+section#contact-content form textarea {
+    font-size: 1.4rem;
+    height: 5rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    outline: none;
+    box-shadow: none;
+}
+
+section#contact-content form textarea {
+    height: 20rem;
+}
+
+section#contact-content form input:focus,
+section#contact-content form input:active {
+    border: 0.1rem solid var(--color-light-pink);
+}
+
+section#contact-content form input::placeholder {
+    color: var(--color-grey-m);
+}
+
+section#contact-content div.contact-info-f p {
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-bottom: 4rem;
+    font-weight: bold;
+    flex-wrap: wrap;
+}
+
+section#contact-content div.contact-info-f p i {
+    font-size: 3rem;
+    margin-right: 3rem;
+}
+
+/*=========================================
+              MAP
+=========================================*/
+section#map iframe {
+    width: 100%;
+}
+
+/*=========================================
+               FOOTER
+=========================================*/
+footer {
+    background-color: #222;
+    color: var(--color-white);
+}
+
+footer div.social-links i {
+    color: var(--color-white);
+    border-radius: 5rem;
+    margin: 1.5rem 0.5rem;
+    width: 5rem;
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    border: 0.2rem solid var(--color-white);
+    transition: all 0.5s ease-in;
+}
+
+footer div.social-links i:hover {
+    background: var(--color-light-pink);
+}
+
+/*=========================================
+               MEDIA QUERIES
+=========================================*/
+@media (max-width:500px) {
+    section#showcase div.showcase-content {
+        padding-left: 2rem;
+    }
+
+    section#showcase div.showcase-content h1 {
+        font-size: 2.5rem;
+        max-width: 70%;
+    }
+
+    section#showcase div.showcase-content p {
+        margin: 2rem 0;
+        font-size: 1.3rem;
+        max-width: 65%;
+        line-height: 2;
+    }
+
+    section#showcase div.showcase-content a {
+        padding: 1rem;
+        margin-top: 2rem;
+    }
+
+    section#video h2.video-heading {
+        font-size: 2rem;
+        letter-spacing: 0.1rem;
+    }
+
+    section#video div.video-wrapper div.playVideo {
+        left: 40%;
+    }
+}
+
+@media (max-width: 989px) {
+    nav#navbar div.collapse.show,
+    nav#navbar div.navbar-collapse {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #fb5279ee;
+        transition: none;
+    }
+
+    nav#navbar div.navbar-collapse {
+        transition: all 0.1s ease-in-out;
+    }
+
+    nav#navbar ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    nav#navbar ul li a {
+        font-size: 1.4rem;
+        color: var(--color-white);
+        text-align: left;
+    }
+
+    nav#navbar ul li a:hover {
+        color: var(--color-grey);
+    }
+
+}
+
+@media (min-width:501px) and (max-width:765px) {
+    section#showcase div.showcase-content {
+        padding-left: 2.2rem;
+    }
+
+    section#showcase div.showcase-content h1 {
+        font-size: 3rem;
+        max-width: 65%;
+    }
+
+    section#showcase div.showcase-content p {
+        max-width: 60%;
+        font-size: 1.4rem;
+    }
+
+    section#showcase div.showcase-content a {
+        padding: 1.5rem;
+    }
+}
+
+@media (min-width:766px) and (max-width:964px) {
+    section#showcase div.showcase-content {
+        padding-left: 2.2rem;
+    }
+
+    section#showcase div.showcase-content h1 {
+        font-size: 3rem;
+        max-width: 65%;
+    }
+
+    section#showcase div.showcase-content p {
+        max-width: 60%;
+        font-size: 1.4rem;
+    }
+
+    section#showcase div.showcase-content a {
+        padding: 1.5rem;
+    }
+}
+
+@media (min-width:965px) and (max-width:1200px) {
+    section#showcase div.showcase-content {
+        padding-left: 6.4rem;
+    }
+
+    section#showcase div.showcase-content h1 {
+        font-size: 4rem;
+        max-width: 75%;
+    }
+
+    section#showcase div.showcase-content p {
+        max-width: 80%;
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    section#team ul.slick-dots {
+        left: -6rem;
+    }
+
+    section#features div.reason {
+        background-color: var(--color-light-pink);
+        color: var(--color-white);
+        padding: 2rem;
+        border-radius: 3rem;
+        text-align: center;
+    }
+
+     section#features div.reason div.reason-content {
+         justify-content: center;
+     }
+
+    section#features div.reason i,
+    section#features div.reason h3,
+    section#features div.reason p {
+        color: var(--color-white);
+        margin-bottom: 1rem;
+    }
+}
